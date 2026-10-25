@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>PiCar Remote</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 40px; }
+    #direction { font-size: 48px; margin: 20px 0; min-height: 60px; }
+    .pad { display: inline-grid; grid-template-columns: repeat(3, 80px); gap: 8px; margin: 20px 0; }
+    .key { height: 80px; font-size: 28px; border: 2px solid #555; border-radius: 8px; background: #eee; cursor: pointer; }
+    .key.active { background: #4caf50; color: white; }
+    .empty { visibility: hidden; }
+    #status { color: #555; margin-top: 20px; }
+  </style>
+  <script src="index.js"></script>
+</head>
+<body>
+  <h1>PiCar Remote Control</h1>
+  <p>Press <b>W A S D</b> on your keyboard (or click the buttons) to drive.</p>
+
+  <div>Direction:</div>
+  <div id="direction">Stopped</div>
+
+  <div class="pad">
+    <div class="empty"></div>
+    <button class="key" id="key-w">W</button>
+    <div class="empty"></div>
+    <button class="key" id="key-a">A</button>
+    <button class="key" id="key-s">S</button>
+    <button class="key" id="key-d">D</button>
+  </div>
+
+  <div>Last key detected: <span id="last_key">(none yet)</span></div>
+
+  <div id="status">Server response: <span id="greet_from_server"> </span></div>
+</body>
+</html>
